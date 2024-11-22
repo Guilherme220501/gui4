@@ -60,11 +60,11 @@ dd{padding: 7px;text-align: left;font-size: 15px;font-family: Cambria, Cochin, G
 thead{text-align: left;text-shadow: 9px;font-size: 30px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: oblique;}
 tbody{text-align: left;text-shadow: 9px;font-size: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-style: inherit;}
 tfoot{text-align: left;text-shadow: 9px;font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-style: initial;}
-summary{width: 210px;margin: auto;border-radius: 10px 10px;text-shadow: 9px;padding: 6px;cursor: pointer;}
-section{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 10px;border: 6px solid blue;}
-header{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 10px;border: 6px solid white;}
-nav{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 10px;border: 6px solid wheat;}
-footer{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 10px;border: 6px solid black;}
+summary{width: 200px;margin: auto;border-radius: 10px 10px;text-shadow: 9px;padding: 6px;cursor: pointer;}
+section{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 30px;border: 6px solid blue;}
+header{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 30px;border: 6px solid white;}
+nav{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 30px;border: 6px solid wheat;}
+footer{text-align: center;justify-content: center;align-items: center;width: 300px;margin: auto;border-radius: 10px 10px;cursor: grab;padding: 30px;border: 6px solid black;}
 .summary:hover{transition: transform(0.3s);transform: scale(1.02);}
 .section:hover{transition: transform(0.5s);transform: scale(1.05);}
 .header:hover{transition: transform(0.6s);transform: scale(1.03);}
