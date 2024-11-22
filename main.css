@@ -57,7 +57,7 @@ ul{list-style-type: none;text-align: left;text-shadow: 9px;}
 dl{padding: 7px;}
 dt{padding: 7px;text-align: left;font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-style: oblique;text-shadow: 9px;}
 dd{padding: 7px;text-align: left;font-size: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-style: initial;text-shadow: 9px;}
-thead{text-align: left;text-shadow: 9px;font-size: 30px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: oblique;}
+thead{text-align: left;text-shadow: 9px;font-size: 20px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: oblique;}
 tbody{text-align: left;text-shadow: 9px;font-size: 15px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-style: inherit;}
 tfoot{text-align: left;text-shadow: 9px;font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-style: initial;}
 summary{width: 200px;margin: auto;border-radius: 10px 10px;text-shadow: 9px;padding: 6px;cursor: pointer;}
