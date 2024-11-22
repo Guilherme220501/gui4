@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="channels4_profile.jpg" type="image/x-icon">
+    <meta name="theme-color" content="#f3212">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<style>
+body{align-items: center;justify-content: center;text-align: center;margin: auto;background: linear-gradient(to right black,blue,black);}
+h1{text-decoration: underline;text-shadow: 9px;font-size: 30px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: oblique;color: white;}
+h2{text-shadow: 9px;font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-style: italic;color: black;}
+p{text-shadow: 9px;font-size: 16px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-style: initial;color: white;}
+footer{padding: 30px;width: 300px;margin: auto;border-radius: 10px 10px;border: 6px solid white;align-items: center;justify-content: center;text-align: center;cursor: col-resize;}
+nav{padding: 30px;width: 300px;margin: auto;border-radius: 10px 10px;border: 6px solid blue;align-items: center;justify-content: center;text-align: center;cursor: cell;}
+#relogio{cursor: move;width: 210px;margin: auto;padding: 5px;border-radius: 10px 10px;font-size: 20px;text-shadow: 9px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-style: oblique;color: white;background-color: blue;border: 3px solid white;box-shadow: 8px 8px 8px black;}
+.time:hover{transform: scale(1.03);transition: transform(0.3s);}
+.summary:hover{transform: scale(1.04);transition: transform(0.5s);}
+.footer:hover{transform: scale(1.05);transition: transform(0.4s);}
+.nav:hover{transform: scale(1.05);transition: transform(0.4s);}
+summary{cursor: crosshair;width: 100px;margin: auto;border-radius: 10px 10px;padding: 4px;text-shadow: 9px;font-family: Arial, Helvetica, sans-serif;font-size: 18px;}
+form{display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;margin: auto;}
+fieldset{width: 300px;margin: auto;border-radius: 10px 10px;padding: 12px;display: flex;flex-direction: column;text-align: center;justify-content: center;background-color: white;border: 4px solid blue;box-shadow: 9px 9px 9px black;}
+label{padding: 13px;margin: auto;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;text-shadow: 9px;font-size: 20px;font-family: Georgia, 'Times New Roman', Times, serif;font-style: oblique;color: black;}
+.color1{width: 900px;border-radius: 10px 10px;margin: auto;padding: 10px;gap: 4px;display: flex;flex-direction: row;align-items: center;justify-content: center;text-align: center;background-color: black;border: 5px solid white;box-shadow: 8px 8px 8px black;}
+.color2{width: 900px;border-radius: 10px 10px;margin: auto;padding: 10px;gap: 4px;display: flex;flex-direction: row;align-items: center;justify-content: center;text-align: center;background-color: blue;border: 5px solid white;box-shadow: 8px 8px 8px blue;}
+.color3{width: 900px;border-radius: 10px 10px;margin: auto;padding: 10px;gap: 4px;display: flex;flex-direction: row;align-items: center;justify-content: center;text-align: center;background-color: beige;border: 5px solid black;box-shadow: 8px 8px 8px white;}
+.color4{width: 1000px;border-radius: 10px 10px;margin: auto;padding: 10px;gap: 4px;display: flex;flex-direction: row;align-items: center;justify-content: center;text-align: center;background-color: whitesmoke;border: 5px solid black;box-shadow: 8px 8px 8px black;}
+input{width: 300px;padding: 4px;margin: auto;border-radius: 10px 10px;text-shadow: 9px;font-size: 20px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-style: oblique;color: black;background-color: white;border: 4px solid blue;text-align: left;}
+select{width: 220px;cursor: cell;margin: auto;border-radius: 10px 10px;padding: 5px;background-color: black;color: yellow;border: 5px solid white;box-shadow: 9px 9px 9px black;text-shadow: 9px;font-family: 'Times New Roman', Times, serif;font-style: inherit;font-size: 20px;}
+textarea{height: 200px;width: 300px;margin: auto;cursor: context-menu;border-radius: 10px 10px;padding: 4px;text-shadow: 9px;font-size: 20px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-style: inherit;}
+button{margin: auto;width: 240px;border-radius: 10px 10px;cursor: move;text-shadow: 9px;font-size: 20px;font-family: Arial, Helvetica, sans-serif;font-style: initial;color: white;background-color: brown;border: 4px solid white;box-shadow: 8px 8px 8px black;}
+</style>
+<body>
+    <div class="summary"><div id="text"><details><summary style="width: 300px;background-color: white;color: black;border: 4px solid red;box-shadow: 10px 10px 10px black;">Formulário</summary>
+    <br>
+    <form action="formulario.php" method="post">
+    <header><h1><big>Cadastro de <b style="color: RED;">Brs</b></big></h1>
+    <br>
+    <div class="time">
+    <div id="relogio"></div>
+    </div>
+    </header>
+    <br>
+    <main>
+    <fieldset>
+    <label for="Nome">Nome</label>
+    <input type="text" name="Nome" id="Nome" title="Digite seu Nome" placeholder="Exemplo: Guilherme Barbosa da Silva" pattern="^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)+$
+    " maxlength="100" required>
+    <label for="Idade">Idade</label>
+    <input type="number" name="Idade" id="Idade" title="Digite a sua Idade" placeholder="Exemplo: 20 anos ou 40 anos ?" pattern="^(?:1[89]|[2-9][0-9]|100)$
+    " maxlength="3" required>
+    <label for="RG">RG</label>
+    <input type="text" name="RG" id="RG" title="Digite seu RG" placeholder="Exemplo: 53.742.867-7" pattern="^\d{2}\.\d{3}\.\d{3}-\d{1}$
+    " maxlength="12"
+    required>
+    <label for="CPF">CPF</label>
+    <input type="text" name="CPF" id="CPF" title="Digite seu CPF" placeholder="Exemplo: 503.552.748-44" pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$
+    " maxlength="14" required>
+    <label for="Endereço">Endereço</label>
+    <input type="text" name="Endereço" id="Endereço" title="Digite seu Endereço" placeholder="Exemplo: Av.Rio das pedras nº4100" pattern="^[a-zA-Z0-9\s,.\-]{3,}$ 
+    " maxlength="200" required>
+    <label for="CEP">CEP</label>
+    <input type="text" name="CEP" id="CEP" title="Digite seu CEP" placeholder="Exemplo: 03936-000" pattern="^\d{5}-\d{3}$
+    " maxlength="10" required>
+    <label for="Telefone">Telefone</label>
+    <input type="tel" name="Telefone" id="Telefone" title="Digite seu Telefone" placeholder="Exemplo: (11)983417590" pattern="^\(\d{2}\) \d{4,5}-\d{4}$
+    " maxlength="15" required>
+    <label for="Email">Email</label>
+    <input type="email" name="Email" id="Email" title="Digite seu Email" placeholder="Exemplo: guilherme8876sk@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+    " maxlength="254" required>
+    <label for="CNPJ">CNPJ</label>
+    <input type="text" name="CNPJ" id="CNPJ" title="Digite seu CNPJ" placeholder="Exemplo: XX.XXX.XXX/0001-XX" pattern="^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$
+    " maxlength="18" required>
+    <label for="Data de Nascimento">Data de Nascimento</label>
+    <input type="date" name="Data de Nascimento" id="Data de Nascimento" title="Digite sua Data de Nascimento" placeholder="Exemplo: 22/05/2001" pattern="^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$
+    " maxlength="10" required>
+    <label for="Seu nível">Seu nível</label>
+    <input type="range" name="Seu nível" id="Seu nível" title="Selecione o Seu nível" placeholder="Exemplo: +/-" required>
+    <label for="Sua Cor">Sua Cor</label>
+    <input type="color" name="Sua Cor" id="Sua Cor" title="Selecione sua Cor" placeholder="Exemplo: Branco ou Negro" required>
+    <label for="Data e Hora">Data e Hora</label>
+    <input type="datetime-local" name="Data e Hora" id="Data e Hora" title="Digite sua Data e Hora" placeholder="Exemplo: 22/05 ás 10hrs" required>
+    <br>
+    <br>
+    <h2><big>Qual o seu estado cívil?</big></h2>
+    <br>
+    <div class="summary"><div id="text"><details><summary style="background-color: black;color: white;border: 4px solid white;box-shadow: 8px 8px 8px black;">QUAL?</summary>
+    <br>
+    <div class="color1">
+    <label for="Solteiro" style="font-size: 10px;text-shadow: 9px;color: white;">Solteiro</label>
+    <input type="checkbox" value="Solteiro" name="cívil?">
+    <label for="Casado" style="font-size: 10px;text-shadow: 9px;color: white;">Casado</label>
+    <input type="checkbox" value="Casado" name="cívil?">
+    <label for="Divorciado" style="font-size: 10px;text-shadow: 9px;color: white;">Divorciado</label>
+    <input type="checkbox" value="Divorciado" name="cívil?">
+    <label for="Separado" style="font-size: 10px;text-shadow: 9px;color: white;">Separado</label>
+    <input type="checkbox" value="Separado" name="cívil?">
+    <label for="Viúvo" style="font-size: 10px;text-shadow: 9px;color: white;">Viúvo</label>
+    <input type="checkbox" value="Viúvo" name="cívil?">
+    <label for="Solteiro" style="font-size: 10px;text-shadow: 9px;color: white;">Solteiro</label>
+    <input type="checkbox" value="Solteiro" name="cívil?">
+    <label for="Compromissado" style="font-size: 10px;text-shadow: 9px;color: white;">Compromissado</label>
+    <input type="checkbox" value="Compromissado" name="cívil?">
+    <label for="Enrolado" style="font-size: 10px;text-shadow: 9px;color: white;">Enrolado</label>
+    <input type="checkbox" value="Enrolado" name="cívil?">
+    <label for="Divorciado" style="font-size: 10px;text-shadow: 9px;color: white;">Divorciado</label>
+    <input type="checkbox" value="Divorciado" name="cívil?">
+    </div>
+    </details></div></div>
+    <br>
+    <br>
+    <h2><big>Qual o seu nível de conhecimento?</big></h2>
+    <br>
+    <div class="summary"><div id="text"><details><summary style="background-color: blue;color: white;border: 4px solid white;box-shadow: 8px 8px 8px black;">QUAL?</summary>
+    <br>
+    <div class="color2">
+    <label for="Aprendiz" style="color: black;text-shadow: 9px;font-size: 10px;">Aprendiz</label>
+    <input type="radio" value="Aprendiz" name="conhecimento?" required>
+    <label for="Iniciante" style="color: black;text-shadow: 9px;font-size: 10px;">Iniciante</label>
+    <input type="radio" value="Iniciante" name="conhecimento?" required>
+    <label for="Mediano" style="color: black;text-shadow: 9px;font-size: 10px;">Mediano</label>
+    <input type="radio" value="Mediano" name="conhecimento?" required>
+    <label for="Cabo" style="color: black;text-shadow: 9px;font-size: 10px;">Cabo</label>
+    <input type="radio" value="Cabo" name="conhecimento?" required>
+    <label for="Intermediário" style="color: black;text-shadow: 9px;font-size: 10px;">Intermediário</label>
+    <input type="radio" value="Intermediário" name="conhecimento?" required>
+    <label for="Veterano" style="color: black;text-shadow: 9px;font-size: 10px;">Veterano</label>
+    <input type="radio" value="Veterano" name="conhecimento?" required>
+    <label for="Expert" style="color: black;text-shadow: 9px;font-size: 10px;">Expert</label>
+    <input type="radio" value="Expert" name="conhecimento?" required>
+    <label for="Mago" style="color: black;text-shadow: 9px;font-size: 10px;">Mago</label>
+    <input type="radio" value="Mago" name="conhecimento?" required>
+    <label for="Mistíco" style="color: black;text-shadow: 9px;font-size: 10px;">Mistíco</label>
+    <input type="radio" value="Mistíco" name="conhecimento?" required>
+    </div>
+    </details></div></div>
+    <br>
+    <br>
+    <h2><big>Qual o seu nível de experiência?</big></h2>
+    <br>
+    <div class="summary"><div id="text"><details><summary style="background-color: white;color: black;border: 4px solid black;box-shadow: 8px 8px 8px black;">QUAL?</summary>
+    <br>
+    <div class="color3">
+    <label for="Iniciante" style="color: white;font-size: 10px;text-shadow: 9px;">Iniciante</label>
+    <input type="checkbox" value="Iniciante" name="experiência?">
+    <label for="Aprendiz" style="color: white;font-size: 10px;text-shadow: 9px;">Aprendiz</label>
+    <input type="checkbox" value="Aprendiz" name="experiência?">
+    <label for="Iniciante" style="color: white;font-size: 10px;text-shadow: 9px;">Iniciante</label>
+    <input type="checkbox" value="Iniciante" name="experiência?">
+    <label for="Mediano" style="color: white;font-size: 10px;text-shadow: 9px;">Mediano</label>
+    <input type="checkbox" value="Mediano" name="experiência?">
+    <label for="Cabo" style="color: white;font-size: 10px;text-shadow: 9px;">Cabo</label>
+    <input type="checkbox" value="Cabo" name="experiência?">
+    <label for="Intermediário" style="color: white;font-size: 10px;text-shadow: 9px;">Intermediário</label>
+    <input type="checkbox" value="Intermediário" name="experiência?">
+    <label for="Avançado" style="color: white;font-size: 10px;text-shadow: 9px;">Avançado</label>
+    <input type="checkbox" value="Avançado" name="experiência?">
+    </div>
+    </details></div></div>
+    <br>
+    <br>
+    <h2><big>Qual a sua classe social?</big></h2>
+    <br>
+    <div class="summary"><div id="text"><details><summary style="background-color: brown;color: white;border: 4px solid white;box-shadow: 9px 9px 9px black;">QUAL?</summary>
+    <br>
+    <div class="color4">
+    <label for="Classe A" style="font-size: 10px;color: white;text-shadow: 9px;">Classe A</label>
+    <input type="radio" value="Classe A" name="social?" required>
+    <label for="Classe B" style="font-size: 10px;color: white;text-shadow: 9px;">Classe B</label>
+    <input type="radio" value="Classe B" name="social?" required>
+    <label for="Classe C" style="font-size: 10px;color: white;text-shadow: 9px;">Classe C</label>
+    <input type="radio" value="Classe C" name="social?" required>
+    <label for="Classe D" style="font-size: 10px;color: white;text-shadow: 9px;">Classe D</label>
+    <input type="radio" value="Classe D" name="social?" required>
+    <label for="Classe E" style="font-size: 10px;color: white;text-shadow: 9px;">Classe E</label>
+    <input type="radio" value="Classe E" name="social?" required>
+    <label for="Classe F" style="font-size: 10px;color: white;text-shadow: 9px;">Classe F</label>
+    <input type="radio" value="Classe F" name="social?" required>
+    <label for="Classe X" style="font-size: 10px;color: white;text-shadow: 9px;">Classe X</label>
+    <input type="radio" value="Classe X" name="social?" required>
+    <label for="Classe S" style="font-size: 10px;color: white;text-shadow: 9px;">Classe S</label>
+    <input type="radio" value="Classe S" name="social?" required>
+    <label for="Classe ZEN" style="font-size: 10px;color: white;text-shadow: 9px;">Classe ZEN</label>
+    <input type="radio" value="Classe ZEN" name="social?" required>
+    <label for="Classe Elite" style="font-size: 10px;color: white;text-shadow: 9px;">Classe Elite</label>
+    <input type="radio" value="Classe Elite" name="social?" required>
+    </div>
+    </details></div></div>
+    <br>
+    <br>
+    <h2><big>Qual o seu signo?</big></h2>
+    <br>
+    <div class="summary"><div id="text"><details><summary style="background-color: black;color: white;border: 4px solid white;box-shadow: 7px 7px 7px yellow;">QUAL?</summary>
+    <br>
+    <select name="signo?" id="signo?" required>
+    <option value="" selected disabled>Selecione</option>
+    <option value="Áries">Áries</option>
+    <option value="Câncer">Câncer</option>
+    <option value="Capricornio">Capricornio</option>
+    <option value="Gemêos">Gemêos</option>
+    <option value="Touro">Touro</option>
+    <option value="Virgem">Virgem</option>
+    <option value="Leão">Leão</option>
+    <option value="Libra">Libra</option>
+    <option value="Escorpião">Escorpião</option>
+    <option value="Aquario">Aquario</option>
+    <option value="Peixes">Peixes</option>
+    <option value="Ofiúco">Ofiúco</option>
+    <option value="Sagitário">Sagitário</option>
+    </select>
+    <br>
+    <br>
+    <h2><big>Me Fale sobre a sua experiência</big></h2>
+    <br>
+    <textarea name="experiência" id="experiência" rows="6" required></textarea>
+    <br>
+    <br>
+    <button value="experiência" class="btn btn-outline-dark">Cadastre</button>
+    </details></div></div>
+    </fieldset>
+    </main>
+    <br>
+    <div class="nav">
+    <nav style="background-color: darkred;">
+    <p>Retorne para minha <a href="index.html" target="_blank" rel="external" style="background-color: white;color: black;border: 3px solid black;box-shadow: 5px 5px 5px white;border-radius: 10px 10px;text-decoration: none;text-shadow: 9px;">1ªPágina</a></p>
+    </nav>
+    </div>
+    <br>
+    <div class="footer">
+    <footer style="background-color: darkcyan;">
+    <p>@GuilhermeBarbosadaSilva, todos os direito reservados.</p>
+    </footer>
+    </div>
+    </form>
+    </details></div></div>
+    <script src="script.js"></script>
+    <script>showAlert("Welcome to my formulary")</script>
+</body>
+</html>
